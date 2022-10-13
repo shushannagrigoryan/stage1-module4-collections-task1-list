@@ -7,14 +7,6 @@ import java.util.List;
 public class ListSorter {
     public void sort(List<String> sourceList) {
         sourceList.sort(new ListComparator());
-        //String min = sourceList.get(0);
-//        for(int i= 0; i< sourceList.size(); i++){
-//            String min = sourceList.get(i);
-//            for(int j = i+1; j<sourceList.size(); j++){
-//                int val = ListComparator.compare("1","2");
-//            }
-//        }
-
     }
 }
 
@@ -24,7 +16,15 @@ class ListComparator implements Comparator<String> {
         int v1 = 5*Integer.parseInt(a)* Integer.parseInt(a) + 3;
         int v2 = 5*Integer.parseInt(b)* Integer.parseInt(b) + 3;
         int value= v1 - v2;
-        return Integer.compare(value, 0);
+        if(value > 0){
+            return 1;
+        }
+        else if(value < 0){return -1;}
+        else{
+            if( Integer.parseInt(a)> Integer.parseInt(b)){return 1;}
+            else{return -1;}
+        }
+        //return Integer.compare(value, 0);
 
     }
 }
